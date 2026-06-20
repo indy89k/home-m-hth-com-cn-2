@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leyu · 资料整理与信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%);
+      border-radius: 2rem;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: #111827;
+    }
+
+    .hero .sub {
+      font-size: 1.125rem;
+      color: #4b5563;
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px dotted #d1d5db;
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      color: #6b7280;
+      background: #eef0f2;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* 卡片通用 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #eaeced;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card p {
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    .card .meta-note {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      border-left: 3px solid #d1d5db;
+      padding-left: 0.6rem;
+    }
+
+    /* 说明区 */
+    .section-explainer {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e6e8ea;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .section-explainer h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    .section-explainer p {
+      color: #374151;
+      margin-bottom: 1rem;
+    }
+
+    .section-explainer .highlight-link {
+      background: #f9fafb;
+      border-radius: 2rem;
+      padding: 0.6rem 1.2rem;
+      display: inline-block;
+      border: 1px solid #e0e2e5;
+      margin-top: 0.5rem;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e6e8ea;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #111827;
+    }
+
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #edeff1;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      font-weight: 500;
+      color: #1f2937;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item span {
+      color: #4b5563;
+      font-size: 0.9rem;
+    }
+
+    .faq-more {
+      margin-top: 1rem;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* 底部 */
+    .footer-links {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #e2e5e8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .footer-links .copy {
+      color: #6b7280;
+      font-size: 0.85rem;
+    }
+
+    .footer-links .link-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    .highlight-leyu {
+      background: #f0f2f5;
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+      font-weight: 450;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .card {
+        padding: 1.5rem 1rem;
+      }
+      .section-explainer, .faq-summary {
+        padding: 1.5rem 1.2rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <section class="hero">
+    <h1>从资料整理到信息索引</h1>
+    <div class="sub">把分散的线索，变成可回溯的结构</div>
+    <div class="tagline">日常记录 · 轻索引 · 持续积累</div>
+  </section>
+
+  <!-- 优势区：卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>📂 整理而非收藏</h3>
+      <p>将碎片信息按主题归类，标注来源和日期，方便后续回溯。不追求大而全，更关注日常的微整理。</p>
+      <div class="meta-note">适用于笔记、书签、归档</div>
+    </div>
+    <div class="card">
+      <h3>🔗 轻量索引结构</h3>
+      <p>通过关键词、标签和简短摘要构建索引，减少反复查找的时间。索引本身也是知识脉络的一部分。</p>
+      <div class="meta-note">标签 + 时间线 + 关联</div>
+    </div>
+    <div class="card">
+      <h3>🔄 持续迭代</h3>
+      <p>资料整理不是一次性工作。定期回顾、合并、重新归类，让信息集合保持弹性，适应认知变化。</p>
+      <div class="meta-note">月度回顾 · 季度重构</div>
+    </div>
+  </div>
+
+  <!-- 说明区：从索引角度展开 -->
+  <div class="section-explainer">
+    <h2>为什么索引比收藏更重要</h2>
+    <p>我们常常会保存很多链接、截图和文章，但过一段时间就忘记当初为什么存，或者找不到了。问题的核心不在于存储，而在于缺乏一个简单的索引系统。</p>
+    <p>用一份主题列表、几组关键词和一句摘要，就能把分散的资料重新组织起来。例如，当你需要回顾某个话题时，先看索引，再决定是否深入原文。这种方式不仅节省时间，也让信息之间产生连接。</p>
+    <p>对于经常整理资料的人来说，<a href="https://cn-media-leyu.com">leyu</a> 提供了一种轻量化的索引思路，帮助你将零散记录转化为可浏览的结构。它更像一个整理伴侣，而不是又一个存储仓库。</p>
+    <div class="highlight-link">🔎 从收藏到检索，中间只差一个索引</div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见疑问 · 摘要</h2>
+    <div class="faq-item">
+      <strong>整理资料需要很多工具吗？</strong>
+      <span>不一定。关键是建立自己的分类逻辑，工具只是辅助。从最简单的文本笔记开始就可以。</span>
+    </div>
+    <div class="faq-item">
+      <strong>索引会不会占用太多时间？</strong>
+      <span>每天花5分钟标注当天收集的资料，周末花15分钟做一次汇总，就能维持一个可用的索引。</span>
+    </div>
+    <div class="faq-item">
+      <strong>如何决定哪些内容值得索引？</strong>
+      <span>优先索引那些你未来可能会再次查找、引用或需要回顾的信息，比如项目资料、学习笔记、书摘等。</span>
+    </div>
+    <div class="faq-more">—— 更多细节可在实际操作中逐步完善 ——</div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <div class="copy">
+      <span>资料索引 · 保持轻量</span>
+    </div>
+    <div class="link-group">
+      <a href="https://cn-media-leyu.com">leyu</a>
+      <span style="color:#9ca3af; font-size:0.8rem;">|</span>
+      <a href="#" style="color:#6b7280; border-bottom: none; cursor: default;">关于索引方法</a>
+      <a href="#" style="color:#6b7280; border-bottom: none; cursor: default;">常见笔记习惯</a>
+    </div>
+  </div>
+
+  <!-- 一句隐藏提示，仅作结构补齐 -->
+  <div style="margin-top: 1.2rem; text-align: center; font-size: 0.75rem; color: #b0b4ba; letter-spacing: 0.3px;">
+    每一条记录都是未来检索的起点
+  </div>
+
+</div>
+</body>
+</html>
