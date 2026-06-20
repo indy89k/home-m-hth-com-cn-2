@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes">
+  <title>雷竞技 · 稳定入口与平台说明</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1a2a3a;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { color: #0b7c8f; text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s, color 0.2s; }
+    a:hover { color: #065e6e; border-bottom-color: #065e6e; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* 导航 */
+    nav {
+      background: #ffffffdd;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-bottom: 1px solid #d4e4ec;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.3px;
+      color: #0b7c8f;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo span { background: #0b7c8f; color: #fff; border-radius: 4px; padding: 0 8px; font-size: 0.9rem; }
+    .nav-links { display: flex; gap: 2rem; font-size: 0.95rem; }
+    .nav-links a { color: #2a4a5a; border-bottom: none; }
+    .nav-links a:hover { color: #0b7c8f; }
+    .nav-links .active { color: #0b7c8f; font-weight: 500; border-bottom: 2px solid #0b7c8f; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-inner { justify-content: center; }
+    }
+
+    /* Hero 区域 – 稳定入口与平台说明 */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      background: linear-gradient(145deg, #e7f3f8 0%, #d4eaf0 100%);
+      margin-bottom: 3rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    @media (max-width: 700px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    }
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .hero h1 em { font-style: normal; color: #0b7c8f; }
+    .hero p {
+      font-size: 1.05rem;
+      color: #1f3b4b;
+      margin: 1rem 0 1.8rem;
+    }
+    .hero-card {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      padding: 1.8rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(7, 88, 104, 0.08);
+      border: 1px solid #c3dbe8;
+    }
+    .hero-card .stat-row { display: flex; gap: 1.5rem; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.8rem; }
+    .hero-card .stat-item { flex: 1; min-width: 80px; }
+    .stat-value { font-size: 1.5rem; font-weight: 600; color: #0b7c8f; }
+    .stat-label { font-size: 0.8rem; color: #3a5b6b; text-transform: uppercase; letter-spacing: 0.4px; }
+
+    /* 场景模块 — 网格卡片 */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #133642;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #8bc9da, transparent);
+    }
+    .scenarios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      margin: 2.5rem 0;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem 1.5rem;
+      box-shadow: 0 5px 18px -5px rgba(19, 70, 88, 0.08);
+      border: 1px solid #dae9f0;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -8px rgba(4, 78, 98, 0.12);
+    }
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #dff0f5;
+      border-radius: 14px;
+      margin-bottom: 0.9rem;
+      color: #0b7c8f;
+      font-size: 1.4rem;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #1a3645;
+    }
+    .card p {
+      font-size: 0.93rem;
+      color: #2d4c5c;
+      margin-bottom: 0.3rem;
+    }
+    .card .tag {
+      display: inline-block;
+      background: #e5f0f5;
+      color: #0b6f7e;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      margin-top: 0.6rem;
+    }
+
+    /* 常见说明 (FAQ 摘要) */
+    .faq-section {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 6px 18px rgba(0, 40, 55, 0.03);
+      border: 1px solid #d1e4ed;
+    }
+    .faq-item {
+      border-bottom: 1px solid #deecf2;
+      padding: 1rem 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-weight: 550;
+      color: #0a3c4a;
+      display: flex;
+      justify-content: space-between;
+      cursor: default;
+    }
+    .faq-q span { color: #0b7c8f; margin-right: 0.5rem; }
+    .faq-a {
+      font-size: 0.92rem;
+      color: #2f5060;
+      margin-top: 0.4rem;
+      padding-left: 1.3rem;
+    }
+
+    /* 内嵌链接段落 */
+    .link-note {
+      background: #e5f2f7;
+      padding: 1.2rem 1.8rem;
+      border-radius: 40px;
+      margin: 2rem 0;
+      text-align: center;
+      font-size: 0.95rem;
+      border: 1px solid #bdd6e2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 0 1.8rem;
+      border-top: 1px solid #cfe0e9;
+      color: #3a5a6a;
+      font-size: 0.85rem;
+    }
+    footer a { color: #0b7c8f; }
+
+    .mt-1 { margin-top: 0.5rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo"><span>⛅</span> 雷竞技 · 稳定入口</div>
+      <div class="nav-links">
+        <a href="#" class="active">首页</a>
+        <a href="#scenarios">场景</a>
+        <a href="#faq">说明</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero 核心介绍 -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1><em>雷竞技</em> 平台<br>简洁 · 稳定的访问入口</h1>
+        <p>围绕用户体验构建的轻量导航式页面，提供场景化指引与基础说明。无需复杂跳转，直接了解平台核心用途与常见事项。</p>
+        <a href="https://index-rayesports.com" style="display:inline-block; background:#0b7c8f; color:#fff; padding:0.6rem 1.8rem; border-radius:40px; font-weight:500; border:none; margin-top:0.5rem;">雷竞技</a>
+        <span style="display:inline-block; margin-left:0.8rem; font-size:0.85rem; color:#2a5a6a;">︎︎︎︎→ 可直接访问</span>
+      </div>
+      <div class="hero-card">
+        <div class="stat-row">
+          <div class="stat-item"><div class="stat-value">3+</div><div class="stat-label">场景模块</div></div>
+          <div class="stat-item"><div class="stat-value">简</div><div class="stat-label">信息架构</div></div>
+          <div class="stat-item"><div class="stat-value">⚡</div><div class="stat-label">快速索引</div></div>
+        </div>
+        <div style="font-size:0.9rem; border-top:1px solid #cfe0e9; padding-top:0.9rem; margin-top:0.2rem;">
+          平台设计以清晰、可靠为原则，减少冗余路径。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- 三个场景模块 -->
+    <h2 class="section-title" id="scenarios">场景模块 · 快速定位</h2>
+    <div class="scenarios">
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>信息浏览</h3>
+        <p>了解平台功能分布和内容结构，通过导航快速到达目标区域。适合首次接触的用户。</p>
+        <span class="tag">结构清晰</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>入口直达</h3>
+        <p>通过固定链接直接进入相应页面，无需多层跳转。保证访问路径简洁、直接。</p>
+        <span class="tag">低延迟</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧩</div>
+        <h3>常见说明</h3>
+        <p>集中展示高频疑问与注意事项，减少重复咨询。信息经过筛选，保持适度精简。</p>
+        <span class="tag">FAQ 摘要</span>
+      </div>
+    </div>
+
+    <!-- 内嵌链接的自然句子 -->
+    <div class="link-note">
+      ⚡ 对于需要稳定访问入口的用户，可直接通过
+      <a href="https://index-rayesports.com" style="font-weight:500;">雷竞技</a>
+      获取最新页面，无需额外搜索或中间页。
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section" id="faq">
+      <h2 style="font-size:1.4rem; font-weight:500; margin-bottom:1.2rem; color:#133642;">📌 常见说明</h2>
+      <div class="faq-item">
+        <div class="faq-q"><span>Q1</span> 页面定位是什么？</div>
+        <div class="faq-a">轻量导航式介绍页，聚合关键场景与说明，帮助用户快速了解平台架构。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Q2</span> 如何保持入口稳定？</div>
+        <div class="faq-a">每次访问使用同一主域名，路径保持扁平。建议直接收藏 <a href="https://index-rayesports.com">雷竞技</a> 主链接。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Q3</span> 内容是否会频繁变化？</div>
+        <div class="faq-a">结构保持稳定，部分描述性文字会根据需要调整，但核心导航与场景模块长期可用。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Q4</span> 移动端是否适配？</div>
+        <div class="faq-a">本页面基于响应式设计，在手机和平板设备上均可获得一致的阅读与操作体验。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>平台入口 · <a href="https://index-rayesports.com">雷竞技</a> &nbsp;|&nbsp; 稳定简洁 ｜ 信息密度适中</p>
+      <p style="margin-top:0.8rem; opacity:0.7;">— 场景导航 · 常见说明 · 可靠访问 —</p>
+    </div>
+  </footer>
+
+</body>
+</html>
