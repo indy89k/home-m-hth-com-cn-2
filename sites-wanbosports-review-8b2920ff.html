@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万博体育 · 资讯专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f0f2f5;
+            color: #2d3436;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .page-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 横幅区域 —— 杂志专题式 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.5rem 2rem 2.2rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+            margin-bottom: 2.5rem;
+            border: 1px solid #e9edf2;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            color: #636e72;
+            background: #ecf0f1;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #1e272e;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.02em;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: #57606a;
+            max-width: 700px;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 卡片式分区 */
+        .section-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid #e4e9ef;
+            transition: box-shadow 0.2s ease;
+        }
+        .section-card:hover {
+            box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+        }
+        .section-card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #1e272e;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #0984e3;
+            padding-left: 0.9rem;
+        }
+        .section-card p {
+            margin-bottom: 1rem;
+            color: #3d4348;
+        }
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .feature-item {
+            background: #f7f9fc;
+            padding: 0.9rem 1rem;
+            border-radius: 16px;
+            border: 1px solid #e8ecf2;
+            font-size: 0.95rem;
+        }
+        .feature-item strong {
+            color: #0984e3;
+            font-weight: 500;
+        }
+
+        /* 引用块 / 说明 */
+        .insight-block {
+            background: #fafbfc;
+            border-left: 4px solid #74b9ff;
+            padding: 1rem 1.4rem;
+            border-radius: 0 16px 16px 0;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+            color: #3d4348;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            text-align: center;
+            padding: 2.2rem 1.8rem 2rem;
+            background: #ffffff;
+            border-radius: 28px;
+            border: 1px solid #e4e9ef;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+            margin-top: 1.5rem;
+        }
+        .footer-note p {
+            font-size: 0.95rem;
+            color: #57606a;
+            margin-bottom: 0.4rem;
+        }
+        .footer-note a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .footer-note a:hover {
+            border-bottom-color: #0984e3;
+        }
+
+        /* 小字号与辅助 */
+        .meta-note {
+            color: #7b878f;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .section-card {
+                padding: 1.5rem 1.2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .footer-note {
+                padding: 1.8rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 首页横幅（杂志专题主视觉） -->
+    <header class="hero">
+        <span class="hero-tag">📋 资料索引 · 2025</span>
+        <h1>万博体育 · 信息整理专题</h1>
+        <p>从公开资料与平台架构出发，梳理关于运动资讯、数据整合以及内容索引的基础框架。本页为静态说明，不承载实时服务。</p>
+    </header>
+
+    <!-- 背景说明（第一段） -->
+    <section class="section-card">
+        <h2>· 背景与定位</h2>
+        <p>在体育信息日益碎片化的环境下，<a href="https://sites-wanbosports.com">万博体育</a> 作为一个聚合式的索引站点，尝试将不同来源的运动相关内容进行归类与陈列。该平台本身不生产原始赛事数据，而是提供一种结构化的浏览路径，使用户能够更高效地定位自己感兴趣的信息板块。</p>
+        <p>从栏目设置来看，站点覆盖了主流体育项目的基础资料、赛事摘要以及部分运动文化相关的延伸内容。整体信息组织遵循“项目 — 分类 — 细节”的层级，便于按需查阅。</p>
+        <div class="insight-block">
+            ⚡ 一个值得注意的细节：该站点的导航逻辑偏向于“资料库”而非“新闻流”，这意味着其内容更新节奏更依赖于系统性整理，而非即时热点。
+        </div>
+    </section>
+
+    <!-- 自然介绍：特点与场景（第二段，含卡片列表） -->
+    <section class="section-card">
+        <h2>· 信息组织特点</h2>
+        <p>基于对公开页面的观察，可以梳理出以下几条明显的结构特征。这些特点共同构成了该平台作为“索引工具”的基本面貌。</p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>分类聚合</strong><br>
+                按运动项目建立独立板块，每个板块下再细分规则、历史、统计等子栏目。
+            </div>
+            <div class="feature-item">
+                <strong>静态化呈现</strong><br>
+                内容以说明性文字和结构化列表为主，不依赖实时比分或动态数据流。
+            </div>
+            <div class="feature-item">
+                <strong>低干扰阅读</strong><br>
+                页面中无弹窗或自动播放元素，信息密度中等，适合专注浏览。
+            </div>
+            <div class="feature-item">
+                <strong>跨项目参考</strong><br>
+                部分页面设有“相关项目”链接，有助于横向比较不同运动的规则或发展脉络。
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem;">上述设计取向使得该站点更适合用于资料查找、背景了解以及体育文化泛读，而非实时赛事追踪。对于希望系统了解某项运动基本框架的用户，这种整理方式能减少信息噪音。</p>
+    </section>
+
+    <!-- 第三段：从索引角度展开的使用场景 -->
+    <section class="section-card">
+        <h2>· 适用场景与边界</h2>
+        <p>如果你正在撰写体育相关的内容，或需要快速了解一项运动的通用规则与术语，<a href="https://sites-wanbosports.com">万博体育</a> 可以作为初步的信息锚点。例如，在查阅某个运动项目的板块时，你会看到该运动的简要沿革、场地说明、基本判罚原则等——这些内容经过二次整理，比碎片化的网络搜索更具条理性。</p>
+        <p>但需要注意，该平台不提供实时赔率、赛事直播或互动社区功能，其定位更接近“体育知识索引器”而非“综合服务平台”。对于深度竞技数据或最新战报，仍需参考专业数据源。换言之，它适合作为信息检索的起点，而非终点。</p>
+        <p style="margin-top: 0.6rem;">从资料整理的角度看，将分散的信息按照统一范式重新呈现，本身就是一种有价值的媒介过滤。这正是该站点在信息生态中所扮演的角色。</p>
+    </section>
+
+    <!-- FAQ 摘要（轻量，不单独成一大块，但保持信息增量） -->
+    <section class="section-card">
+        <h2>· 常见疑问摘要</h2>
+        <p style="margin-bottom: 0.4rem;"><strong>Q：</strong> 该站点是否需要注册或登录？<br>
+        <strong>A：</strong> 当前公开页面均为可访问状态，未发现强制注册限制。具体功能以实际页面为准。</p>
+        <p style="margin-bottom: 0.4rem;"><strong>Q：</strong> 内容语言以什么为主？<br>
+        <strong>A：</strong> 站内绝大多数页面使用中文，部分术语附有英文对照。适合中文阅读习惯的用户。</p>
+        <p><strong>Q：</strong> 信息多久更新一次？<br>
+        <strong>A：</strong> 由于采用静态整理模式，更新频率不固定。建议以最终页面标注的时间或版本信息为准。</p>
+        <div class="meta-note">以上回答基于公开页面观察，不代表平台官方立场。</div>
+    </section>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p>如果你想进一步了解该索引站点的结构，可以前往 <a href="https://sites-wanbosports.com">万博体育</a> 直接浏览各个板块。</p>
+        <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #858e96;">本页为独立制作的专题说明，与站点无直接附属关系。内容仅供参考，不构成任何引导或承诺。</p>
+    </div>
+
+</div>
+</body>
+</html>
